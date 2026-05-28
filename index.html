@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Uaena Brasil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #9b59b6;
+        }
+        h2 {
+            color: #555;
+            margin-top: 40px;
+            border-bottom: 2px solid #9b59b6;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .meta {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .progresso {
+            font-size: 18px;
+            color: #555;
+        }
+        .barra {
+            font-family: monospace;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin: 20px 0;
+        }
+        .menu {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .menu a {
+            color: #9b59b6;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: #f0f0f0;
+        }
+        .menu a:hover {
+            background-color: #9b59b6;
+            color: white;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #aaa;
+        }
+        .secao {
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        img {
+            width: 150px;
+            border-radius: 10%;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 CENTRAL UAENA BRASIL</h1>
+        
+        <div class="menu">
+            <a href="#inicio">🏠 Início</a>
+            <a href="#youtube">▶️ YouTube</a>
+            <a href="#spotify">🎧 Spotify</a>
+            <a href="#itunes">🍎 iTunes</a>
+        </div>
+
+        <!-- SEÇÃO INÍCIO -->
+        <div id="inicio" class="secao">
+            <img src="https://i.imgur.com/OtYyKsK.jpg" alt="IU">
+            <p>💜 Acompanhe aqui as metas da nossa artista!</p>
+        </div>
+
+        <!-- SEÇÃO YOUTUBE -->
+        <div id="youtube" class="secao">
+            <h2>📺 METAS DO YOUTUBE</h2>
+            <div class="meta">
+                Meta: 3.000.000 visualizações
+            </div>
+            <div class="progresso">
+                Progresso atual: 1.000.000 (33%)
+            </div>
+            <div class="barra">
+                ██████░░░░░░░░░░░░░░ 33%
+            </div>
+        </div>
+
+        <!-- SEÇÃO SPOTIFY -->
+        <div id="spotify" class="secao">
+            <h2>🎧 METAS DO SPOTIFY</h2>
+            <div class="meta">
+                Meta: 5.000.000 streams
+            </div>
+            <div class="progresso">
+                Progresso atual: 2.000.000 (40%)
+            </div>
+            <div class="barra">
+                ████████░░░░░░░░░░░░ 40%
+            </div>
+        </div>
+
+        <!-- SEÇÃO ITUNES -->
+        <div id="itunes" class="secao">
+            <h2>🍎 METAS DO ITUNES</h2>
+            <div class="meta">
+                Meta: 1.000 vendas
+            </div>
+            <div class="progresso">
+                Progresso atual: 400 (40%)
+            </div>
+            <div class="barra">
+                ████████░░░░░░░░░░░░ 40%
+            </div>
+        </div>
+
+        <div class="progresso">
+            📊 Atualizado em: <span id="data"></span>
+        </div>
+        <footer>
+            💜 Vamos juntos apoiar a IU!
+        </footer>
+    </div>
+    <script>
+        document.getElementById('data').innerText = new Date().toLocaleDateString('pt-BR');
+    </script>
+</body>
+</html>
