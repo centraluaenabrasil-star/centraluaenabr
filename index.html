@@ -2,187 +2,40 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central Uaena Brasil</title>
+    <title>Central Uaena Brasil - Teste</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1a0b2e, #2d1b4e);
+            background: #1a0b2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial;
             text-align: center;
             padding: 20px;
         }
-        .container {
-            max-width: 550px;
+        .card {
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            max-width: 400px;
             margin: auto;
-            background: rgba(255,255,255,0.95);
-            border-radius: 32px;
-            padding: 25px 20px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
         }
-        .logo {
-            width: 100px;
-            height: 100px;
-            background: #9b59b6;
+        img {
+            width: 150px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            overflow: hidden;
-        }
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            margin-bottom: 20px;
         }
         h1 {
             color: #9b59b6;
-            font-size: 26px;
-        }
-        .subtitulo {
-            color: #7d3c98;
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-        .menu {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-        .menu button {
-            background: #f0e6f5;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 40px;
-            font-weight: bold;
-            color: #6c3483;
-            cursor: pointer;
-        }
-        .menu button.ativo {
-            background: #9b59b6;
-            color: white;
-        }
-        .secao {
-            display: none;
-        }
-        .secao.ativa {
-            display: block;
-        }
-        .card-meta {
-            background: white;
-            border-radius: 28px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-        }
-        .meta-valor {
-            font-size: 26px;
-            font-weight: bold;
-            background: #f9f2fc;
-            display: inline-block;
-            padding: 5px 18px;
-            border-radius: 40px;
-            margin: 10px 0;
-        }
-        .barra {
-            font-family: monospace;
-            font-size: 28px;
-            letter-spacing: 3px;
-            background: #eee5f2;
-            padding: 8px;
-            border-radius: 40px;
-            margin: 15px 0;
-        }
-        .info-extra {
-            background: #f8f3fa;
-            border-radius: 24px;
-            padding: 12px;
-            font-size: 13px;
-            border-left: 4px solid #9b59b6;
-        }
-        .atualizado {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #a77bcb;
-        }
-        footer {
-            margin-top: 25px;
-            font-size: 11px;
-            color: #b19cd9;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="logo">
-    <img src="https://i.imgur.com/3tN7tLb.jpg"alt="IU"style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
+    <div class="card">
+        <img src="https://i.imgur.com/3tN7tLb.jpg" alt="IU">
+        <h1>CENTRAL UAENA BRASIL</h1>
+        <p>💜 Se a foto aparecer, o problema não é o código!</p>
     </div>
-    <h1>CENTRAL UAENA BRASIL</h1>
-    <div class="subtitulo">FÃ-CLUBE OFICIAL DE FÃS BRASILEIROS</div>
-
-    <div class="menu">
-        <button onclick="mostrarSecao('inicio')" id="btn-inicio" class="ativo">🏠 INÍCIO</button>
-        <button onclick="mostrarSecao('youtube')" id="btn-youtube">📺 YOUTUBE</button>
-        <button onclick="mostrarSecao('spotify')" id="btn-spotify">🎧 SPOTIFY</button>
-        <button onclick="mostrarSecao('itunes')" id="btn-itunes">🍎 ITUNES</button>
-        <button onclick="mostrarSecao('conquistas')" id="btn-conquistas">🏆 CONQUISTAS</button>
-    </div>
-
-    <div id="inicio" class="secao ativa">
-        <div class="card-meta">
-            <p>💜 Acompanhe em tempo real as metas de streaming da nossa rainha IU.</p>
-            <div class="info-extra">📢 PERFECT CROWN ainda está entre os TOP 10 em mais de 44 países 🌍</div>
-        </div>
-    </div>
-
-    <div id="youtube" class="secao">
-        <div class="card-meta">
-            <div class="meta-valor">3.000.000</div>
-            <div>Visualizações atuais: 1.000.000 (33%)</div>
-            <div class="barra">███░░░░░░░ 33%</div>
-        </div>
-    </div>
-
-    <div id="spotify" class="secao">
-        <div class="card-meta">
-            <div class="meta-valor">5.000.000</div>
-            <div>Streams atuais: 2.000.000 (40%)</div>
-            <div class="barra">████░░░░░░ 40%</div>
-        </div>
-    </div>
-
-    <div id="itunes" class="secao">
-        <div class="card-meta">
-            <div class="meta-valor">1.000</div>
-            <div>Vendas: 400 (40%)</div>
-            <div class="barra">████░░░░░░ 40%</div>
-        </div>
-    </div>
-
-    <div id="conquistas" class="secao">
-        <div class="card-meta">
-            <div class="info-extra">⭐ #2 Solista Feminina – Forbes Korea 2026</div>
-            <div class="info-extra">⭐ Perfect Crown – 1º lugar em 5 países asiáticos</div>
-            <div class="info-extra">⭐ 33,7M seguidores no Instagram</div>
-        </div>
-    </div>
-
-    <div class="atualizado">📊 Atualizado em: <span id="data"></span></div>
-    <footer>💜 Central Uaena Brasil | Projetos e Verdade sobre IU</footer>
-</div>
-
-<script>
-    function mostrarSecao(secaoId) {
-        document.querySelectorAll('.secao').forEach(s => s.classList.remove('ativa'));
-        document.querySelectorAll('.menu button').forEach(b => b.classList.remove('ativo'));
-        document.getElementById(secaoId).classList.add('ativa');
-        const botoes = { inicio:'btn-inicio', youtube:'btn-youtube', spotify:'btn-spotify', itunes:'btn-itunes', conquistas:'btn-conquistas' };
-        if (botoes[secaoId]) document.getElementById(botoes[secaoId]).classList.add('ativo');
-    }
-    document.getElementById('data').innerText = new Date().toLocaleDateString('pt-BR');
-</script>
 </body>
-</html
+</html>
