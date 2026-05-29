@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Central Uaena Brasil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Quicksand', 'Poppins', Arial, sans-serif;
+            background: #f8f5ff;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* FOTO DE FUNDO BEM CLARINHA */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://i.postimg.cc/CLARA-LINK-AQUI/sua-foto-fundo-clara.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            padding: 25px 20px 40px;
+            box-shadow: 0 20px 40px rgba(155, 89, 182, 0.15);
+            border: 1px solid rgba(255,255,240,0.8);
+        }
+
+        /* CABEÇALHO BONITO */
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            background: linear-gradient(135deg, #b873e0, #8e44ad);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: #b28ad2;
+            font-weight: 600;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        /* MENU DE ABAS */
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .menu button {
+            background: #f4ecfe;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 60px;
+            font-weight: bold;
+            color: #7d3c98;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .menu button.ativo {
+            background: #c58be6;
+            color: white;
+            box-shadow: 0 6px 14px rgba(197, 139, 230, 0.35);
+        }
+
+        /* SEÇÕES (ABAS) */
+        .secao {
+            display: none;
+            animation: fadeSuave 0.4s ease;
+        }
+
+        .secao.ativa {
+            display: block;
+        }
+
+        @keyframes fadeSuave {
+            from { opacity: 0; transform: translateY(12px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* ESPAÇOS PARA FOTOS E GIFS */
+        .espaco-foto {
+            text-align: center;
+            margin: 20px 0 25px;
+        }
+
+        .espaco-foto img, .espaco-foto video {
+            max-width: 100%;
+            width: 260px;
+            border-radius: 32px;
+            box-shadow: 0 18px 28px -10px rgba(128, 0, 128, 0.2);
+            border: 3px solid white;
+        }
+
+        /* CARD DAS METAS */
+        .card-meta {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 36px;
+            padding: 20px;
+            margin-bottom: 22px;
+            text-align: center;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 10px 20px rgba(128, 0, 128, 0.05);
+            border: 1px solid #f1e2ff;
+        }
+
+        .card-meta h3 {
+            color: #6a1b9a;
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .meta-valor {
+            background: #f3e9fe;
+            padding: 6px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 20px;
+            color: #5e2a8c;
+            margin: 12px 0;
+        }
+
+        .barra {
+            font-family: monospace;
+            font-size: 28px;
+            letter-spacing: 5px;
+            background: #ede2f7;
+            padding: 8px;
+            border-radius: 60px;
+            margin: 14px 0;
+        }
+
+        /* ÍCONE CASINHA */
+        .icone-casa {
+            text-align: center;
+            margin: 30px 0 15px;
+        }
+
+        .icone-casa button {
+            background: #f0e2ff;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 60px;
+            width: 65px;
+            transition: 0.2s;
+        }
+
+        /* RANKING */
+        .ranking-linha {
+            background: #f9f2ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 18px;
+            border-radius: 80px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .posicao {
+            background: #c58be6;
+            color: white;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #b28ad2;
+            margin-top: 35px;
+            border-top: 1px solid #efdfff;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🌸 CENTRAL UAENA BRASIL</h1>
+        <p>꧁ METAS & AMOR PELA IU ꧂</p>
+    </div>
+
+    <div class="menu">
+        <button onclick="mostrarSecao('inicio')" id="btn-inicio" class="ativo">🏠 INÍCIO</button>
+        <button onclick="mostrarSecao('spotify')" id="btn-spotify">🎧 SPOTIFY</button>
+        <button onclick="mostrarSecao('youtube')" id="btn-youtube">📺 YOUTUBE</button>
+        <button onclick="mostrarSecao('itunes')" id="btn-itunes">🍎 ITUNES</button>
+        <button onclick="mostrarSecao('ranking')" id="btn-ranking">🏆 RANKING</button>
+    </div>
+
+    <!-- ABAS COM MUITO ESPAÇO PARA FOTO/GIF -->
+    <!-- INÍCIO -->
+    <div id="inicio" class="secao ativa">
+        <div class="espaco-foto">
+            <img src="https://i.postimg.cc/CLARA-LINK-AQUI/foto-iu-principal.jpg" alt="IU fofa">
+        </div>
+        <div class="card-meta">
+            <p>💜 Sejam bem-vindos ao nosso cantinho dedicado à IU 💜</p>
+            <p>📢 Perfect Crown no TOP 10 mundial! 🌍</p>
+        </div>
+    </div>
+
+    <!-- SPOTIFY -->
+    <div id="spotify" class="secao">
+        <div class="espaco-foto">
+            <img src="https://i.postimg.cc/CLARA-LINK-AQUI/foto-spotify.jpg" alt="IU Spotify">
+        </div>
+        <div class="card-meta">
+            <h3>🎵 Love wins all</h3>
+            <div class="meta-valor">Meta 5.000.000</div>
+            <div>Progresso: 2.000.000 (40%)</div>
+            <div class="barra">████░░░░░░ 40%</div>
+        </div>
+        <div class="card-meta">
+            <h3>🎵 Holssi</h3>
+            <div class="meta-valor">Meta 3.000.000</div>
+            <div>Progresso: 1.000.000 (33%)</div>
+            <div class="barra">███░░░░░░░ 33%</div>
+        </div>
+        <div class="icone-casa">
+            <button onclick="mostrarSecao('inicio')">🏠</button>
+        </div>
+    </div>
+
+    <!-- YOUTUBE -->
+    <div id="youtube" class="secao">
+        <div class="espaco-foto">
+            <img src="https://i.postimg.cc/CLARA-LINK-AQUI/gif-iu-mv.gif" alt="GIF do MV">
+        </div>
+        <div class="card-meta">
+            <h3>🎬 Love wins all (MV)</h3>
+            <div class="meta-valor">Meta 10.000.000</div>
+            <div>Progresso: 3.200.000 (32%)</div>
+            <div class="barra">███░░░░░░░ 32%</div>
+        </div>
+        <div class="icone-casa">
+            <button onclick="mostrarSecao('inicio')">🏠</button>
+        </div>
+    </div>
+
+    <!-- ITUNES -->
+    <div id="itunes" class="secao">
+        <div class="espaco-foto">
+            <img src="https://i.postimg.cc/CLARA-LINK-AQUI/foto-itunes.jpg" alt="IU iTunes">
+        </div>
+        <div class="card-meta">
+            <h3>🍎 iTunes Brasil</h3>
+            <div class="meta-valor">#3 Top Álbuns</div>
+            <div>Meta: #1</div>
+            <div class="barra">████░░░░░░ 40%</div>
+        </div>
+        <div class="icone-casa">
+            <button onclick="mostrarSecao('inicio')">🏠</button>
+        </div>
+    </div>
+
+    <!-- RANKING -->
+    <div id="ranking" class="secao">
+        <div class="espaco-foto">
+            <img src="https://i.postimg.cc/CLARA-LINK-AQUI/foto-ranking.jpg" alt="Ranking">
+        </div>
+        <div class="ranking-linha">
+            <div class="posicao">1</div>
+            <div class="nome-user">@uaena_br</div>
+            <div class="streams">1.250 plays</div>
+        </div>
+        <div class="ranking-linha">
+            <div class="posicao">2</div>
+            <div class="nome-user">@iu_lover</div>
+            <div class="streams">980 plays</div>
+        </div>
+        <div class="icone-casa">
+            <button onclick="mostrarSecao('inicio')">🏠</button>
+        </div>
+    </div>
+
+    <footer>💜 Projeto fã-clube Central Uaena Brasil | Tudo com amor para IU</footer>
+</div>
+
+<script>
+    function mostrarSecao(secaoId) {
+        document.querySelectorAll('.secao').forEach(s => s.classList.remove('ativa'));
+        document.querySelectorAll('.menu button').forEach(b => b.classList.remove('ativo'));
+        document.getElementById(secaoId).classList.add('ativa');
+        document.getElementById('btn-' + secaoId).classList.add('ativo');
+    }
+</script>
+</body>
+</html>
